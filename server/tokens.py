@@ -1,2 +1,2 @@
-MONGODB_USER = "tamar_31"
-MONGODB_PASS = "mDw5G2Y3Arx164bN"
+MONGODB_USER = "your user name goes here"
+MONGODB_PASS = "password to username goes here"
