@@ -20,9 +20,9 @@ open in PyCharm
 
 run app.py from PyCharm
 
-![img.png](img.png)
-![img_1.png](img_1.png)
-![img_3.png](img_3.png)
+![img.png](images/img.png)
+![img_1.png](images/img_1.png)
+![img_3.png](images/img_3.png)
 
 
 ## TO DO:
