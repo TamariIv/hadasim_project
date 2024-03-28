@@ -51,7 +51,12 @@
                             @click="toggleEditUserModal(user)">
                             Update
                             </button>
-                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            <button
+                            type="button"
+                            class="btn btn-danger btn-sm"
+                            @click="handleDeleteUser(user)">
+                            Delete
+                            </button>
                         </div>
                     </td>
                     </tr>
@@ -692,9 +697,9 @@ export default {
             }
         },
         handleEditCancel() {
-            this.toggleEditBookModal(null);
+            this.toggleEditUserModal(null);
             this.initForm();
-            this.getBooks();
+            this.getUsers();
         },
         updateUser(payload, userID) {
             const path = `http://localhost:5001/users/${userID}`;
@@ -744,6 +749,22 @@ export default {
             } else{
                 body.classList.remove('modal-open');
             }
+        },
+        handleDeleteUser(user) {
+            this.removeUser(user.id);
+        },
+        removeUser(userID) {
+            const path = `http://localhost:5001/books/${userID}`;
+            axios.delete(path)
+                .then(() => {
+                    this.getUsers();
+                    this.message = 'User removed!';
+                    this.showMessage = true;
+                })
+                .catch((error) => {
+                    console.error(error);
+                    this.getUsers();
+                });
         },
     },
     created() {
