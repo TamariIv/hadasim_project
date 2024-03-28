@@ -2,6 +2,7 @@ import math
 
 
 def rectangle():
+    """Calculate and print either the area or perimeter of a rectangle based on user input."""
     height = int(input("Enter the height of the rectangle: "))
     width = int(input("Enter the width of the rectangle: "))
 
@@ -12,6 +13,7 @@ def rectangle():
 
 
 def triangle():
+    """Calculate and print either the perimeter or print a triangle based on user input."""
     height = int(input("Enter the height of the triangle: "))
     width = int(input("Enter the width of the triangle: "))
 
@@ -30,6 +32,13 @@ def triangle():
 
 
 def print_triangle(height, width):
+    """
+    Print a triangle pattern based on the given height and width.
+
+    Args:
+        height (int): Height of the triangle.
+        width (int): Width of the triangle.
+    """
     if width % 2 == 0 or width > height * 2:
         print("Cannot print the triangle.")
         return
